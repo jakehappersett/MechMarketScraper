@@ -23,3 +23,8 @@ class Config:
     def twilio(cls, key):
         """Get Twilio values from config.ini."""
         return cls.configParser.get('TWILIO', key)
+
+    @classmethod
+    def setup(cls, key):
+        """Get basic config values from config.ini."""
+        return cls.configParser.get('SETUP', key)

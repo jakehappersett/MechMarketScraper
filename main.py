@@ -2,16 +2,10 @@ from Scraper import *
 import time
 from config_loader import Config
 
-# PRAW constants
-
-
-# Twilio constants
-
-
 
 def notify(notifier, post, message):
     if notifier.checkIfAlreadySent(post):
-        notifier.sendMessage('8042100901','17572092974', message)
+        notifier.sendMessage(Config.twilio('PHONE_NUMBER'),Config.twilio('TWILIO_NUMBER'), message)
         notifier.addToExemptionList(post)
 
 
